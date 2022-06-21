@@ -60,7 +60,7 @@ We can now add the script to a Node.js task. The screenshot below shows it in Mo
 
 Note how we split the require statements from the main code? This simplifies processing the script on the Morpheus side.
 
-Note also, how we prefix our call for the Axios package? See how `require('axios');` becomes `require('morpheus/axios');`? This tells the task plugin to use the globally installed version of the module.
+Note also, how we prefix our call for the Axios package? See how `require('axios');` becomes `require('morpheus/axios');`? This tells the task plugin to use the globally installed version of the module, and allows us to differentiate it from core Node.js modules such as `http`
 
 Running this task in Morpheus we should see the following task output:-
 
