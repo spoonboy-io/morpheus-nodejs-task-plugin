@@ -1,0 +1,51 @@
+buildscript {
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:6.0.0"
+        classpath "io.github.gradle-nexus:publish-plugin:1.0.0"
+    }
+}
+
+plugins {
+    id "com.bertramlabs.asset-pipeline" version "3.3.2"
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group = 'com.morpheusdata'
+version = '0.1.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
+repositories {
+    mavenCentral()
+		maven { url "https://plugins.gradle.org/m2/" }
+		jcenter()
+		mavenLocal()
+}
+
+dependencies {
+    compileOnly 'com.morpheusdata:morpheus-plugin-api:0.13.1'
+    compileOnly 'org.codehaus.groovy:groovy-all:2.5.6'
+    compileOnly 'io.reactivex.rxjava2:rxjava:2.2.0'
+    compileOnly "org.slf4j:slf4j-api:1.7.26"
+    compileOnly "org.slf4j:slf4j-parent:1.7.26"
+}
+
+jar {
+	manifest {
+		attributes(
+				'Plugin-Class': 'com.morpheusdata.task.NodejsTaskPlugin',
+				'Plugin-Version': archiveVersion.get()
+		)
+	}
+}
+
+tasks.assemble.dependsOn tasks.shadowJar
+
+
