@@ -2,7 +2,7 @@
 
 ### Write Morpheus automation tasks in Node.js
 
-- Results of previous tasks in a results object variable as key > values
+- Results of previous tasks are available in a `results` object variable as `key`:`value`
 - Node.js must be installed on the appliance
 - Modules must be installed on the appliance with the global flag `npm install -g modulename`
 - The Plugin needs to be configured with the absolute path to the Node installation in the plugin settings
