@@ -6,7 +6,7 @@
 - Node.js must be installed on the appliance
 - Modules must be installed on the appliance with the global flag `npm install -g modulename`
 - The Plugin needs to be configured with the absolute path to the Node installation in the plugin settings
-- Does not use Nashhorn. Use modern Ecmascript syntax, dependent on the version of Node.js you install
+- Does not use Nashorn. Use modern Ecmascript syntax, dependent on the version of Node.js you install
 
 ### Build
 
