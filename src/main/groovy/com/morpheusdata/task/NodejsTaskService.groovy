@@ -62,7 +62,6 @@ class NodejsTaskService extends AbstractTaskService {
 		def scriptOption = task.taskOptions.find { it.optionType.code == 'nodejsTaskScript' }
 		String scriptData = scriptOption.value
 		
-		// TODO we need the previous script results 
 		// TODO we need morpheus vars
 
 		// path
