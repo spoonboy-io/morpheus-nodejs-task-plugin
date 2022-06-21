@@ -14,11 +14,11 @@
 3. Discover the absolute path of your Node.js installation (mine was `/home/ollie/.nvm/versions/node/v16.15.1`)
 4. Visit the plugin settings (Admin > Integrations > Plugins) and add the absolute path as shown below:- <img width="620" alt="edit plugin settings" src="https://user-images.githubusercontent.com/7113347/174819249-2c9ecd2f-e33e-4b52-a9d5-7da6bc02f580.png">
 
-
-
 ### Example
 
-A simple script that usinsg AXIOS module - a non-core package
+In this example, we want to use a simple Node.js script in Morpheus. The code requires an external package, Axios, a HTTP request library.
+
+This is the code:-
 
 ```Node.js
 const axios = require('axios');
@@ -39,6 +39,24 @@ axios.get('https://jsonplaceholder.typicode.com/users')
     console.log('Error: ', err.message);
   });
 ```
+
+External modules need to be installed on the Morpheus appliance globally. Once installed the module can be used by all Morpheus Node.js tasks.
+
+To install Axios globally we run this command:-
+
+`npm install -g axios`
+
+We can now add the script to a Node.js task. The screenshot below shows it in Morpheus. 
+
+<img width="1131" alt="image" src="https://user-images.githubusercontent.com/7113347/174821605-0760786e-656d-4c3a-9c76-0d1640288ca8.png">
+
+Note how we split the require statements from the main code? This simplifies composing the script on the Morpheus side.
+
+Note also, how we prefix our call for the Axios package? See how `require('axios');` becomes `require('morpheus/axios');`? This tells the task plugin to use the globally installed version of the module.
+
+Running this task in Morpheus we should see the following task output:-
+
+<img width="1147" alt="image" src="https://user-images.githubusercontent.com/7113347/174825856-2b5cb056-ad69-4a80-980b-1aaca8340d7d.png">
 
 ### TODO
 - Make the Morpheus vars available to the task
