@@ -12,7 +12,7 @@
 1. Install the plugin on Morpheus
 2. Install Node.js on the Morpheus Appliance. I used NVM to install Node.js v16.5.1 LTS
 3. Discover the absolute path of your Node.js installation (mine was `/home/ollie/.nvm/versions/node/v16.15.1`)
-4. Visit the plugin settings (Admin > Integrations > Plugins) and add the absolute path as shown below:- <img width="620" alt="edit plugin settings" src="https://user-images.githubusercontent.com/7113347/174819249-2c9ecd2f-e33e-4b52-a9d5-7da6bc02f580.png">
+4. Visit the plugin settings (Admin > Integrations > Plugins) and edit the plugin settings to add the absolute path as shown below:- <img width="620" alt="edit plugin settings" src="https://user-images.githubusercontent.com/7113347/174819249-2c9ecd2f-e33e-4b52-a9d5-7da6bc02f580.png">
 
 ### Example
 
