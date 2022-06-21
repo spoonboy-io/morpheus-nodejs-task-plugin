@@ -7,6 +7,14 @@
 - Modules must be installed on the appliance with the global flag `npm install -g modulename`
 - The Plugin needs to be configured with the absolute path to the Node installation in the plugin settings
 
+### Build
+
+You should be able to build this locally using the included grade wrapper
+
+```
+./gradlew shadowJar     
+```
+
 ### Setup
 
 1. Install the plugin on Morpheus
