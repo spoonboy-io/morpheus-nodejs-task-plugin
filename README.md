@@ -70,4 +70,3 @@ Running this task in Morpheus we should see the following task output:-
 
 ### TODO
 - Make the Morpheus vars available to the task
-- Logo for when listed in Morpheus
