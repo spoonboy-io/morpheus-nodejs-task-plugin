@@ -50,7 +50,7 @@ class NodejsTaskProvider implements TaskProvider {
 
 	@Override
 	String getCode() {
-		return "nodejsTask"
+		return "nodejs-task"
 	}
 
 	@Override
